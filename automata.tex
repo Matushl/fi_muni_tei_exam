@@ -333,23 +333,31 @@ které se opakují:
 
 CYK algoritmus je narozdíl od předchozích metod deterministický.
 
-\begin{Verbatim}[fontsize=\small]
-let the input be a string I consisting of n characters: a1 ... an.
-let the grammar contain r nonterminal symbols R1 ... Rr, with start symbol R1.
-let P[n,n,r] be an array of booleans. Initialize all elements of P to false.
-for each s = 1 to n
-  for each unit production Rv -> as
-    set P[1,s,v] = true
-for each l = 2 to n -- Length of span
-  for each s = 1 to n-l+1 -- Start of span
-    for each p = 1 to l-1 -- Partition of span
-      for each production Ra -> Rb Rc
-        if P[p,s,b] and P[l-p,s+p,c] then set P[l,s,a] = true
-if P[n,1,1] is true then
-  I is member of language
-else
-  I is not member of language
-\end{Verbatim}
+\begin{algorithm}[H]
+\caption{CYK algoritmus}
+Let the input be a string $I$ consisting of $n$ characters: $a_1\dots a_n$.\\
+Let the grammar contain $r$ nonterminal symbols $R_1\dots R_r$, with start symbol $R_1$.\\
+Let $P[n,n,r]$ be an array of booleans. Initialize all elements of $P$ to false.
+\begin{lstlisting}[
+  mathescape,
+  columns=fullflexible,
+  basicstyle=\fontfamily{lmvtt}\selectfont,
+  numbers=left,
+]
+    for each $s = 1$ to n
+      for each unit production $R_v \rightarrow a_s$
+        set $P[1,s,v] = \text{true}$
+    for each $l = 2$ to $n$ -- Length of span
+      for each $s = 1$ to $n-l+1$ -- Start of span
+        for each $p = 1$ to $l-1$ -- Partition of span
+          for each production $R_a \rightarrow R_bR_c$
+            if $P[p,s,b]$ and $P[l-p,s+p,c]$ then set $P[l,s,a] = \text{true}$
+    if $P[n,1,1]$ is true then
+      $I$ is member of language
+    else
+      $I$ is not member of language
+\end{lstlisting}
+\end{algorithm}
 
 \subsubsection{LL(1) gramatiky}
 
