@@ -55,7 +55,7 @@ Jednoduchou intuici za definicí nabízí Vennův diagram.
     Jaká je pravděpodobnost, že náhodně zvolená žárovka
     bude svítit přes 5000 hodin?
     \[
-{\displaystyle {\begin{aligned}\Pr(A)&=\Pr(A\mid B_{X})\cdot \Pr(B_{X})+\Pr(A\mid B_{Y})\cdot \Pr(B_{Y})\\[4pt]&={99 \over 100}\cdot {6 \over 10}+{95 \over 100}\cdot {4 \over 10}={{594+380} \over 1000}={974 \over 1000}\end{aligned}}}
+ {\displaystyle {\begin{aligned}\Pr(A)&=\Pr(A\mid B_{X})\cdot \Pr(B_{X})+\Pr(A\mid B_{Y})\cdot \Pr(B_{Y})\\[4pt]&=\frac{99}{100}\cdot \frac{6}{10}+\frac{95}{100}\cdot \frac{4}{10}=\frac{594+380}{1000}=\frac{974}{1000}\end{aligned}}}
 \]
 \end{example}
 
@@ -219,7 +219,7 @@ Z~definice vyplývá $E(X) = 1 \cdot p + 0 \cdot (1-p) = p$.
     Náhodná proměnná $X$ má {\em binomickou distribuci} s parametry $(n, p)$,
     pokud pro $0 \leq k \leq n$ platí
 \[
-    P(X = k) = {{n} \choose {k}} p^k (1 - p)^{n - k}
+    P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}
 \]
 \end{definition}
 

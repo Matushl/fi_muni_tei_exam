@@ -180,7 +180,7 @@ Pro každý navštívený vrchol $v$, je $dist[v]$ nejkratší cesta z $s$ do
 $v$. Pro každý nenavštívený vrchol $u$, je $dist[u]$ nejkratší cesta z
 $s$ do $u$ přes dosud navštívené vrcholy.
 
-\begin{algorithm}[h]
+\begin{algorithm}[ht]
 \caption{Dijkstra}
 \begin{algorithmic}[1]
 \Function{Dijkstra}{$G, s, t$}
@@ -479,7 +479,7 @@ Při $(i+1)$. kontrakci je to nejvýše $\frac{2}{n-i}$. Pravděpodobnost,
 \[
     \prod_{i = 0}^{n - 3} (1 - \frac{2}{n-i}) =
     \prod_{i = 0}^{n - 3} (\frac{n - i - 2}{n-i}) =
-    {n \choose 2}^{-1} =
+    \binom{n}{2}^{-1} =
     \frac{2}{n(n-1)}
 \]
 Nyní můžeme algoritmus $kn^2$-krát opakovat a získáme následující
